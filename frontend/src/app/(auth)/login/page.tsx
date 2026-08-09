@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { signIn } from "next-auth/react";
-import { Lock, ArrowRight, Eye, EyeOff, Mail, ShieldAlert, ArrowLeft } from "lucide-react";
+import { Lock, ArrowRight, Eye, EyeOff, Mail, ShieldAlert, ArrowLeft, Truck } from "lucide-react";
 import { LoadingSpinner } from "@/frontend/components/ui/LoadingSpinner";
 
 type LoginStep = 'credentials' | 'otp';
@@ -126,9 +126,8 @@ export default function LoginPage() {
                         <>
                             {/* Branding */}
                             <div className="text-center mb-10 flex flex-col items-center">
-                                <div className="w-24 h-24 rounded-full bg-white shadow-xl shadow-orange-500/20 overflow-hidden border-2 border-white/10 mb-4 p-1">
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img src="/images/logiopen-logo.png" alt="LogiOpen Logistics" className="w-full h-full object-cover rounded-full" />
+                                <div className="w-20 h-20 rounded-3xl bg-gradient-to-tr from-green-500 to-emerald-400 flex items-center justify-center shadow-xl shadow-green-500/20 border border-white/20 mb-4">
+                                    <Truck className="w-10 h-10 text-slate-950 stroke-[2.5]" />
                                 </div>
                                 <h2 className="text-2xl font-bold text-white mb-2">Secure Logistics Portal</h2>
                                 <p className="text-green-100/60 text-sm">Manage your shipments efficiently</p>

@@ -1,4 +1,7 @@
 import mongoose from 'mongoose';
+import User from '../models/User';
+import Branch from '../models/Branch';
+import bcrypt from 'bcryptjs';
 
 const connectDB = async () => {
     try {
@@ -21,10 +24,6 @@ const connectDB = async () => {
         
         // Auto-seed initial super admin if database is empty
         try {
-            const User = require('../models/User').default;
-            const Branch = require('../models/Branch').default;
-            const bcrypt = require('bcryptjs');
-
             const userCount = await User.countDocuments();
             if (userCount === 0) {
                 console.log('🌱 Empty database detected! Auto-seeding default Super Admin accounts...');
@@ -65,7 +64,7 @@ const connectDB = async () => {
                 console.log('   Username: admin    | Password: admin123');
             }
         } catch (seedErr) {
-            console.warn('⚠️ Auto-seed notice:', seedErr);
+            console.error('❌ Auto-seed error:', seedErr);
         }
 
         return conn;

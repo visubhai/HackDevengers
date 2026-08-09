@@ -10,7 +10,8 @@ import {
     BarChart3,
     Settings,
     PackageOpen,
-    TrendingUp
+    TrendingUp,
+    Truck
 } from "lucide-react";
 import { cn } from "@/frontend/lib/utils";
 
@@ -82,14 +83,8 @@ export function Sidebar() {
 
                     <div className="h-24 flex items-center px-6 border-b border-white/5 bg-transparent shrink-0 overflow-hidden">
                         <div className="flex items-center gap-3">
-                            <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0 bg-white shadow-lg overflow-hidden border border-white/20 p-0.5 relative">
-                                <Image
-                                    src="/images/logiopen-logo.png"
-                                    alt="LogiOpen Logistics Logo"
-                                    fill
-                                    sizes="48px"
-                                    className="object-cover rounded-full"
-                                />
+                            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-green-500 to-emerald-400 flex items-center justify-center shrink-0 shadow-lg border border-white/20">
+                                <Truck className="w-6 h-6 text-slate-950 stroke-[2.5]" />
                             </div>
                             <h1 className={cn(
                                 "text-xl font-bold tracking-tight text-white transition-opacity duration-300 whitespace-nowrap flex flex-col items-start leading-tight",
