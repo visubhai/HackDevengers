@@ -48,6 +48,32 @@ stateDiagram-v2
 
 ---
 
+## 🧾 Digital LR Receipt (Bilty) Output Sample
+
+LogiOpen automatically generates clean, standardized digital **Lorry Receipts (Bilty)** with itemized cost breakdowns, sender/receiver details, and payment verification badges:
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ BOOKING DATE                                           L.R. NUMBER                                     │
+│ 04/08/2026, 07:48 am                             HIR106-000758                                [ PAID ]   │
+├────────────────────────────────────────────────────┬───────────────────────────────────────────────────┤
+│ SENDER: RAHUL MALHOTRA               📞 9825557956 │ RECEIVER: CYRUS POONAWALLA          📞 9825345952 │
+├────────────────────────────────────────────────────┼───────────────────────────────────────────────────┤
+│ FROM: HIRABAGH                                     │ TO: SETELITE                                      │
+├─────┬──────────────────────────────────────────────┴────────────────────────┬──────────────────────────┤
+│ QTY │ DESCRIPTION (ITEM DETAILS)                                           │ FREIGHT:         1464.00 │
+├─────┼──────────────────────────────────────────────────────────────────────┤ HANDLING:          58.00 │
+│  4  │ HARDWARE & ELECTRICAL FITTINGS (Fragile handling required...)        │ HAMALI:            81.00 │
+│     │                                                                      ├──────────────────────────┤
+│     │                                                                      │ TOTAL RATE:              │
+│     │                                                                      │  1603                    │
+├─────┴──────────────────────────────────────────────────────────────────────┴──────────────────────────┤
+│ Remarks: Standard Express Delivery via Hirabagh to Setelite                                            │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
 ## 🛠️ Tech Stack
 
 ### Frontend
