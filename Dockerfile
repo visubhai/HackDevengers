@@ -13,11 +13,12 @@ COPY frontend/package.json ./frontend/
 # Using npm install instead of npm ci because package-lock.json might be stale (referencing apps/backend)
 RUN npm install
 
-# Copy backend source
+# Copy backend and frontend source code
 COPY backend ./backend
+COPY frontend ./frontend
 
-# Build backend
-RUN npm run build -w backend
+# Build backend and frontend
+RUN npm run build -w backend && npm run build -w frontend
 
 # Production Runner Stage
 FROM node:20-alpine AS runner
@@ -34,18 +35,19 @@ RUN apk add --no-cache \
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
-WORKDIR /app/backend
+WORKDIR /app
 
 ENV NODE_ENV=production
 
-# Copy necessary files from builder
-COPY --from=builder /app/package.json ../
-COPY --from=builder /app/node_modules ../node_modules
-COPY --from=builder /app/backend ./
+# Copy necessary build artifacts from builder
+COPY --from=builder /app/package.json ./
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/backend ./backend
+COPY --from=builder /app/frontend ./frontend
 
-# Port 10000 is Render's default, 3001 is the app's fallback
+# Expose ports: 3000 for Next.js (mapped publicly by Render), 3001 for Express API
+EXPOSE 3000
 EXPOSE 3001
-EXPOSE 10000
 
-# Start it directly from the backend directory
-CMD ["node", "dist/index.js"]
+# Start both backend and frontend concurrently
+CMD ["sh", "-c", "PORT=3001 node backend/dist/index.js & npm run start -w frontend"]
