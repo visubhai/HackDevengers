@@ -1,22 +1,23 @@
 "use client";
 
-import { useState, lazy, Suspense } from "react";
+import { useState, Suspense } from "react";
 import { useBranchStore } from "@/frontend/lib/store";
 import { cn } from "@/frontend/lib/utils";
 import {
     BarChart3, TrendingUp, GitBranch, Route,
     Truck, IndianRupee, XCircle, Users, ArrowLeftRight, UserSearch
 } from "lucide-react";
+import dynamic from "next/dynamic";
 
-const OverviewTab = lazy(() => import("@/frontend/components/analytics/tabs/OverviewTab"));
-const BranchPerformanceTab = lazy(() => import("@/frontend/components/analytics/tabs/BranchPerformanceTab"));
-const RouteAnalyticsTab = lazy(() => import("@/frontend/components/analytics/tabs/RouteAnalyticsTab"));
-const DeliveryPerformanceTab = lazy(() => import("@/frontend/components/analytics/tabs/DeliveryPerformanceTab"));
-const FinancialInsightsTab = lazy(() => import("@/frontend/components/analytics/tabs/FinancialInsightsTab"));
-const CancellationTab = lazy(() => import("@/frontend/components/analytics/tabs/CancellationTab"));
-const CustomerInsightsTab = lazy(() => import("@/frontend/components/analytics/tabs/CustomerInsightsTab"));
-const ComparisonTab = lazy(() => import("@/frontend/components/analytics/tabs/ComparisonTab"));
-const PartyLookupTab = lazy(() => import("@/frontend/components/analytics/tabs/PartyLookupTab"));
+const OverviewTab = dynamic(() => import("@/frontend/components/analytics/tabs/OverviewTab"), { ssr: false });
+const BranchPerformanceTab = dynamic(() => import("@/frontend/components/analytics/tabs/BranchPerformanceTab"), { ssr: false });
+const RouteAnalyticsTab = dynamic(() => import("@/frontend/components/analytics/tabs/RouteAnalyticsTab"), { ssr: false });
+const DeliveryPerformanceTab = dynamic(() => import("@/frontend/components/analytics/tabs/DeliveryPerformanceTab"), { ssr: false });
+const FinancialInsightsTab = dynamic(() => import("@/frontend/components/analytics/tabs/FinancialInsightsTab"), { ssr: false });
+const CancellationTab = dynamic(() => import("@/frontend/components/analytics/tabs/CancellationTab"), { ssr: false });
+const CustomerInsightsTab = dynamic(() => import("@/frontend/components/analytics/tabs/CustomerInsightsTab"), { ssr: false });
+const ComparisonTab = dynamic(() => import("@/frontend/components/analytics/tabs/ComparisonTab"), { ssr: false });
+const PartyLookupTab = dynamic(() => import("@/frontend/components/analytics/tabs/PartyLookupTab"), { ssr: false });
 
 const tabs = [
     { id: "overview", label: "Overview", icon: BarChart3 },
