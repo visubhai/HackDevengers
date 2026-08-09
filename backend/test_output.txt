@@ -1,0 +1,648 @@
+  console.error
+    ValidationError: Custom keyGenerator appears to use request IP without calling the ipKeyGenerator helper function for IPv6 addresses. This could allow IPv6 users to bypass limits. See https://express-rate-limit.github.io/ERR_ERL_KEY_GEN_IPV6/ for more information.
+        at Object.keyGeneratorIpFallback (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:642:13)
+        at Object.wrappedValidations.<computed> [as keyGeneratorIpFallback] (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:685:22)
+        at parseOptions (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:755:16)
+        at rateLimit (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:836:18)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/middleware/rateLimiter.ts:3:41)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at Runtime.requireModuleOrMock (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:964:21)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/routes/authRoutes.ts:7:1)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at Runtime.requireModuleOrMock (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:964:21)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/index.ts:11:1)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at Runtime.requireModuleOrMock (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:964:21)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/tests/auth.test.ts:2:1)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at jestAdapter (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-circus/build/runner.js:95:13)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at runTestInternal (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runner/build/testWorker.js:275:16)
+        at runTest (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runner/build/testWorker.js:343:7)
+        at Object.worker (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runner/build/testWorker.js:497:12) {
+      code: 'ERR_ERL_KEY_GEN_IPV6',
+      help: 'https://express-rate-limit.github.io/ERR_ERL_KEY_GEN_IPV6/'
+    }
+
+      1 | import rateLimit from 'express-rate-limit';
+      2 |
+    > 3 | export const authRateLimiter = rateLimit({
+        |                                         ^
+      4 |     windowMs: 15 * 60 * 1000, // 15 minutes
+      5 |     max: 10, // Limit each IP to 10 requests per `window` (here, per 15 minutes)
+      6 |     keyGenerator: (req) => {
+
+      at Object.wrappedValidations.<computed> [as keyGeneratorIpFallback] (../node_modules/express-rate-limit/dist/index.cjs:691:24)
+      at parseOptions (../node_modules/express-rate-limit/dist/index.cjs:755:16)
+      at rateLimit (../node_modules/express-rate-limit/dist/index.cjs:836:18)
+      at Object.<anonymous> (src/middleware/rateLimiter.ts:3:41)
+      at Object.<anonymous> (src/routes/authRoutes.ts:7:1)
+      at Object.<anonymous> (src/index.ts:11:1)
+      at Object.<anonymous> (src/tests/auth.test.ts:2:1)
+
+  console.error
+    ValidationError: Custom keyGenerator appears to use request IP without calling the ipKeyGenerator helper function for IPv6 addresses. This could allow IPv6 users to bypass limits. See https://express-rate-limit.github.io/ERR_ERL_KEY_GEN_IPV6/ for more information.
+        at Object.keyGeneratorIpFallback (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:642:13)
+        at Object.wrappedValidations.<computed> [as keyGeneratorIpFallback] (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:685:22)
+        at parseOptions (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:755:16)
+        at rateLimit (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:836:18)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/middleware/rateLimiter.ts:3:41)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at Runtime.requireModuleOrMock (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:964:21)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/routes/authRoutes.ts:7:1)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at Runtime.requireModuleOrMock (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:964:21)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/index.ts:11:1)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at Runtime.requireModuleOrMock (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:964:21)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/tests/booking.test.ts:7:1)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at jestAdapter (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-circus/build/runner.js:95:13)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at runTestInternal (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runner/build/testWorker.js:275:16)
+        at runTest (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runner/build/testWorker.js:343:7)
+        at Object.worker (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runner/build/testWorker.js:497:12) {
+      code: 'ERR_ERL_KEY_GEN_IPV6',
+      help: 'https://express-rate-limit.github.io/ERR_ERL_KEY_GEN_IPV6/'
+    }
+
+      1 | import rateLimit from 'express-rate-limit';
+      2 |
+    > 3 | export const authRateLimiter = rateLimit({
+        |                                         ^
+      4 |     windowMs: 15 * 60 * 1000, // 15 minutes
+      5 |     max: 10, // Limit each IP to 10 requests per `window` (here, per 15 minutes)
+      6 |     keyGenerator: (req) => {
+
+      at Object.wrappedValidations.<computed> [as keyGeneratorIpFallback] (../node_modules/express-rate-limit/dist/index.cjs:691:24)
+      at parseOptions (../node_modules/express-rate-limit/dist/index.cjs:755:16)
+      at rateLimit (../node_modules/express-rate-limit/dist/index.cjs:836:18)
+      at Object.<anonymous> (src/middleware/rateLimiter.ts:3:41)
+      at Object.<anonymous> (src/routes/authRoutes.ts:7:1)
+      at Object.<anonymous> (src/index.ts:11:1)
+      at Object.<anonymous> (src/tests/booking.test.ts:7:1)
+
+  console.error
+    ValidationError: Custom keyGenerator appears to use request IP without calling the ipKeyGenerator helper function for IPv6 addresses. This could allow IPv6 users to bypass limits. See https://express-rate-limit.github.io/ERR_ERL_KEY_GEN_IPV6/ for more information.
+        at Object.keyGeneratorIpFallback (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:642:13)
+        at Object.wrappedValidations.<computed> [as keyGeneratorIpFallback] (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:685:22)
+        at parseOptions (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:755:16)
+        at rateLimit (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:836:18)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/middleware/rateLimiter.ts:3:41)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at Runtime.requireModuleOrMock (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:964:21)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/routes/authRoutes.ts:7:1)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at Runtime.requireModuleOrMock (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:964:21)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/index.ts:11:1)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at Runtime.requireModuleOrMock (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:964:21)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/tests/branch.test.ts:2:1)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at jestAdapter (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-circus/build/runner.js:95:13)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at runTestInternal (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runner/build/testWorker.js:275:16)
+        at runTest (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runner/build/testWorker.js:343:7)
+        at Object.worker (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runner/build/testWorker.js:497:12) {
+      code: 'ERR_ERL_KEY_GEN_IPV6',
+      help: 'https://express-rate-limit.github.io/ERR_ERL_KEY_GEN_IPV6/'
+    }
+
+      1 | import rateLimit from 'express-rate-limit';
+      2 |
+    > 3 | export const authRateLimiter = rateLimit({
+        |                                         ^
+      4 |     windowMs: 15 * 60 * 1000, // 15 minutes
+      5 |     max: 10, // Limit each IP to 10 requests per `window` (here, per 15 minutes)
+      6 |     keyGenerator: (req) => {
+
+      at Object.wrappedValidations.<computed> [as keyGeneratorIpFallback] (../node_modules/express-rate-limit/dist/index.cjs:691:24)
+      at parseOptions (../node_modules/express-rate-limit/dist/index.cjs:755:16)
+      at rateLimit (../node_modules/express-rate-limit/dist/index.cjs:836:18)
+      at Object.<anonymous> (src/middleware/rateLimiter.ts:3:41)
+      at Object.<anonymous> (src/routes/authRoutes.ts:7:1)
+      at Object.<anonymous> (src/index.ts:11:1)
+      at Object.<anonymous> (src/tests/branch.test.ts:2:1)
+
+  console.error
+    ValidationError: Custom keyGenerator appears to use request IP without calling the ipKeyGenerator helper function for IPv6 addresses. This could allow IPv6 users to bypass limits. See https://express-rate-limit.github.io/ERR_ERL_KEY_GEN_IPV6/ for more information.
+        at Object.keyGeneratorIpFallback (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:642:13)
+        at Object.wrappedValidations.<computed> [as keyGeneratorIpFallback] (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:685:22)
+        at parseOptions (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:755:16)
+        at rateLimit (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:836:18)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/middleware/rateLimiter.ts:3:41)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at Runtime.requireModuleOrMock (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:964:21)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/routes/authRoutes.ts:7:1)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at Runtime.requireModuleOrMock (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:964:21)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/index.ts:11:1)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at Runtime.requireModuleOrMock (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:964:21)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/tests/user.test.ts:2:1)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at jestAdapter (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-circus/build/runner.js:95:13)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at runTestInternal (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runner/build/testWorker.js:275:16)
+        at runTest (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runner/build/testWorker.js:343:7)
+        at Object.worker (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runner/build/testWorker.js:497:12) {
+      code: 'ERR_ERL_KEY_GEN_IPV6',
+      help: 'https://express-rate-limit.github.io/ERR_ERL_KEY_GEN_IPV6/'
+    }
+
+      1 | import rateLimit from 'express-rate-limit';
+      2 |
+    > 3 | export const authRateLimiter = rateLimit({
+        |                                         ^
+      4 |     windowMs: 15 * 60 * 1000, // 15 minutes
+      5 |     max: 10, // Limit each IP to 10 requests per `window` (here, per 15 minutes)
+      6 |     keyGenerator: (req) => {
+
+      at Object.wrappedValidations.<computed> [as keyGeneratorIpFallback] (../node_modules/express-rate-limit/dist/index.cjs:691:24)
+      at parseOptions (../node_modules/express-rate-limit/dist/index.cjs:755:16)
+      at rateLimit (../node_modules/express-rate-limit/dist/index.cjs:836:18)
+      at Object.<anonymous> (src/middleware/rateLimiter.ts:3:41)
+      at Object.<anonymous> (src/routes/authRoutes.ts:7:1)
+      at Object.<anonymous> (src/index.ts:11:1)
+      at Object.<anonymous> (src/tests/user.test.ts:2:1)
+
+  console.error
+    ValidationError: Custom keyGenerator appears to use request IP without calling the ipKeyGenerator helper function for IPv6 addresses. This could allow IPv6 users to bypass limits. See https://express-rate-limit.github.io/ERR_ERL_KEY_GEN_IPV6/ for more information.
+        at Object.keyGeneratorIpFallback (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:642:13)
+        at Object.wrappedValidations.<computed> [as keyGeneratorIpFallback] (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:685:22)
+        at parseOptions (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:755:16)
+        at rateLimit (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express-rate-limit/dist/index.cjs:836:18)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/middleware/rateLimiter.ts:3:41)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at Runtime.requireModuleOrMock (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:964:21)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/routes/authRoutes.ts:7:1)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at Runtime.requireModuleOrMock (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:964:21)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/index.ts:11:1)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at Runtime.requireModuleOrMock (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:964:21)
+        at Object.<anonymous> (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/tests/ledger.test.ts:2:1)
+        at Runtime._execModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:1268:24)
+        at Runtime._loadModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:944:12)
+        at Runtime.requireModule (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runtime/build/index.js:832:12)
+        at jestAdapter (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-circus/build/runner.js:95:13)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at runTestInternal (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runner/build/testWorker.js:275:16)
+        at runTest (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runner/build/testWorker.js:343:7)
+        at Object.worker (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/jest-runner/build/testWorker.js:497:12) {
+      code: 'ERR_ERL_KEY_GEN_IPV6',
+      help: 'https://express-rate-limit.github.io/ERR_ERL_KEY_GEN_IPV6/'
+    }
+
+      1 | import rateLimit from 'express-rate-limit';
+      2 |
+    > 3 | export const authRateLimiter = rateLimit({
+        |                                         ^
+      4 |     windowMs: 15 * 60 * 1000, // 15 minutes
+      5 |     max: 10, // Limit each IP to 10 requests per `window` (here, per 15 minutes)
+      6 |     keyGenerator: (req) => {
+
+      at Object.wrappedValidations.<computed> [as keyGeneratorIpFallback] (../node_modules/express-rate-limit/dist/index.cjs:691:24)
+      at parseOptions (../node_modules/express-rate-limit/dist/index.cjs:755:16)
+      at rateLimit (../node_modules/express-rate-limit/dist/index.cjs:836:18)
+      at Object.<anonymous> (src/middleware/rateLimiter.ts:3:41)
+      at Object.<anonymous> (src/routes/authRoutes.ts:7:1)
+      at Object.<anonymous> (src/index.ts:11:1)
+      at Object.<anonymous> (src/tests/ledger.test.ts:2:1)
+
+  console.log
+    🔄 Initializing WhatsApp Service...
+
+      at new WhatsappService (src/services/whatsapp.ts:14:17)
+
+  console.log
+    ⏸️ WhatsApp Service is PAUSED (WHATSAPP_ENABLED is not true)
+
+      at new WhatsappService (src/services/whatsapp.ts:38:21)
+
+  console.log
+    🔄 Initializing WhatsApp Service...
+
+      at new WhatsappService (src/services/whatsapp.ts:14:17)
+
+  console.log
+    ⏸️ WhatsApp Service is PAUSED (WHATSAPP_ENABLED is not true)
+
+      at new WhatsappService (src/services/whatsapp.ts:38:21)
+
+  console.log
+    🔄 Initializing WhatsApp Service...
+
+      at new WhatsappService (src/services/whatsapp.ts:14:17)
+
+  console.log
+    ⏸️ WhatsApp Service is PAUSED (WHATSAPP_ENABLED is not true)
+
+      at new WhatsappService (src/services/whatsapp.ts:38:21)
+
+  console.log
+    🔄 Initializing WhatsApp Service...
+
+      at new WhatsappService (src/services/whatsapp.ts:14:17)
+
+  console.log
+    ⏸️ WhatsApp Service is PAUSED (WHATSAPP_ENABLED is not true)
+
+      at new WhatsappService (src/services/whatsapp.ts:38:21)
+
+  console.log
+    🔄 Initializing WhatsApp Service...
+
+      at new WhatsappService (src/services/whatsapp.ts:14:17)
+
+  console.log
+    ⏸️ WhatsApp Service is PAUSED (WHATSAPP_ENABLED is not true)
+
+      at new WhatsappService (src/services/whatsapp.ts:38:21)
+
+  console.log
+    Testing connecting to: mongodb://127.0.0.1:52732/?replicaSet=rs0
+
+      at src/scripts/setup-test.ts:25:13
+
+  console.log
+    Testing connecting to: mongodb://127.0.0.1:52733/?replicaSet=rs0
+
+      at src/scripts/setup-test.ts:25:13
+
+  console.log
+    Testing connecting to: mongodb://127.0.0.1:52735/?replicaSet=rs0
+
+      at src/scripts/setup-test.ts:25:13
+
+  console.log
+    Testing connecting to: mongodb://127.0.0.1:52738/?replicaSet=rs0
+
+      at src/scripts/setup-test.ts:25:13
+
+  console.log
+    Testing connecting to: mongodb://127.0.0.1:52734/?replicaSet=rs0
+
+      at src/scripts/setup-test.ts:25:13
+
+  console.log
+    Successfully connected to MongoDB Memory Server
+
+      at src/scripts/setup-test.ts:34:17
+
+  console.log
+    Successfully connected to MongoDB Memory Server
+
+      at src/scripts/setup-test.ts:34:17
+
+  console.log
+    Successfully connected to MongoDB Memory Server
+
+      at src/scripts/setup-test.ts:34:17
+
+  console.log
+    Successfully connected to MongoDB Memory Server
+
+      at src/scripts/setup-test.ts:34:17
+
+  console.log
+    Successfully connected to MongoDB Memory Server
+
+      at src/scripts/setup-test.ts:34:17
+
+2026-03-09 23:31:21 [ID:fb0d9940-1be1-11f1-a122-33eb8cd84880] [[32minfo[39m]: GET /api/branches 200 8ms {
+  "service": "parcel-management-backend",
+  "method": "GET",
+  "url": "/api/branches",
+  "status": 200,
+  "duration": 8,
+  "ip": "::ffff:127.0.0.1"
+}
+  console.log
+    [RoleCheck] URL: / | UserRole: SUPER_ADMIN | ReqRoles: SUPER_ADMIN
+
+      at src/middleware/roleMiddleware.ts:10:17
+
+2026-03-09 23:31:21 [ID:fb0f1fe0-1be1-11f1-b7cb-37a22a87e2d4] [[32minfo[39m]: POST /api/ledger 201 20ms {
+  "service": "parcel-management-backend",
+  "method": "POST",
+  "url": "/api/ledger",
+  "status": 201,
+  "duration": 20,
+  "ip": "::ffff:127.0.0.1"
+}
+  console.log
+    [RoleCheck] URL: / | UserRole: SUPER_ADMIN | ReqRoles: SUPER_ADMIN
+
+      at src/middleware/roleMiddleware.ts:10:17
+
+2026-03-09 23:31:21 [ID:fb1699f0-1be1-11f1-b7cb-37a22a87e2d4] [[31merror[39m]: 403 - You can only record transactions for your own branch. - /api/ledger - POST - ::ffff:127.0.0.1 {
+  "service": "parcel-management-backend",
+  "stack": "Error: You can only record transactions for your own branch.\n    at /Users/vishvampaghadar/Documents/parcel-management-system/backend/src/controllers/ledgerController.ts:15:15\n    at Generator.next (<anonymous>)\n    at /Users/vishvampaghadar/Documents/parcel-management-system/backend/src/controllers/ledgerController.ts:8:71\n    at new Promise (<anonymous>)\n    at __awaiter (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/controllers/ledgerController.ts:4:12)\n    at /Users/vishvampaghadar/Documents/parcel-management-system/backend/src/controllers/ledgerController.ts:9:84\n    at /Users/vishvampaghadar/Documents/parcel-management-system/backend/src/middleware/errorHandler.ts:55:9\n    at Layer.handle [as handle_request] (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express/lib/router/route.js:149:13)\n    at /Users/vishvampaghadar/Documents/parcel-management-system/backend/src/middleware/validate.ts:13:20\n    at Generator.next (<anonymous>)\n    at fulfilled (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/middleware/validate.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "path": "/api/ledger",
+  "method": "POST"
+}
+2026-03-09 23:31:21 [ID:fb1699f0-1be1-11f1-b7cb-37a22a87e2d4] [[32minfo[39m]: POST /api/ledger 403 3ms {
+  "service": "parcel-management-backend",
+  "method": "POST",
+  "url": "/api/ledger",
+  "status": 403,
+  "duration": 3,
+  "ip": "::ffff:127.0.0.1"
+}
+2026-03-09 23:31:21 [ID:fb19f550-1be1-11f1-b7cb-37a22a87e2d4] [[32minfo[39m]: GET /api/ledger?branchId=69af0af1345590f57dbfa83b 200 8ms {
+  "service": "parcel-management-backend",
+  "method": "GET",
+  "url": "/api/ledger?branchId=69af0af1345590f57dbfa83b",
+  "status": 200,
+  "duration": 8,
+  "ip": "::ffff:127.0.0.1"
+}
+2026-03-09 23:31:21 [ID:fb1cdb80-1be1-11f1-b7cb-37a22a87e2d4] [[32minfo[39m]: GET /api/ledger?branchId=69af0af1345590f57dbfa84e 200 5ms {
+  "service": "parcel-management-backend",
+  "method": "GET",
+  "url": "/api/ledger?branchId=69af0af1345590f57dbfa84e",
+  "status": 200,
+  "duration": 5,
+  "ip": "::ffff:127.0.0.1"
+}
+2026-03-09 23:31:22 [ID:fb367e00-1be1-11f1-b27e-454d073ec13b] [[32minfo[39m]: POST /api/bookings 201 15ms {
+  "service": "parcel-management-backend",
+  "method": "POST",
+  "url": "/api/bookings",
+  "status": 201,
+  "duration": 15,
+  "ip": "::ffff:127.0.0.1"
+}
+2026-03-09 23:31:22 [ID:fb0de760-1be1-11f1-a81b-e155fe40605d] [[32minfo[39m]: POST /api/users 201 285ms {
+  "service": "parcel-management-backend",
+  "method": "POST",
+  "url": "/api/users",
+  "status": 201,
+  "duration": 285,
+  "ip": "::ffff:127.0.0.1"
+}
+  console.warn
+    ⚠️ WhatsApp is not ready. Message queued or dropped.
+
+      81 |     public async sendMessage(to: string, message: string): Promise<boolean> {
+      82 |         if (!this.ready) {
+    > 83 |             console.warn('⚠️ WhatsApp is not ready. Message queued or dropped.');
+         |                     ^
+      84 |             return false;
+      85 |         }
+      86 |
+
+      at WhatsappService.<anonymous> (src/services/whatsapp.ts:83:21)
+      at src/services/whatsapp.ts:8:71
+      at __awaiter (src/services/whatsapp.ts:4:12)
+      at WhatsappService.sendMessage (src/services/whatsapp.ts:86:16)
+      at src/controllers/bookingController.ts:309:39
+      at fulfilled (src/controllers/bookingController.ts:5:58)
+
+  console.log
+    [RoleCheck] URL: / | UserRole: SUPER_ADMIN | ReqRoles: SUPER_ADMIN
+
+      at src/middleware/roleMiddleware.ts:10:17
+
+2026-03-09 23:31:22 [ID:fb3c9880-1be1-11f1-a81b-e155fe40605d] [[32minfo[39m]: GET /api/users 200 6ms {
+  "service": "parcel-management-backend",
+  "method": "GET",
+  "url": "/api/users",
+  "status": 200,
+  "duration": 6,
+  "ip": "::ffff:127.0.0.1"
+}
+2026-03-09 23:31:22 [ID:fb12c960-1be1-11f1-a122-33eb8cd84880] [[32minfo[39m]: POST /api/branches 201 281ms {
+  "service": "parcel-management-backend",
+  "method": "POST",
+  "url": "/api/branches",
+  "status": 201,
+  "duration": 281,
+  "ip": "::ffff:127.0.0.1"
+}
+  console.log
+    [RoleCheck] URL: /69af0af27226a6f0eba933a1/status | UserRole: SUPER_ADMIN | ReqRoles: SUPER_ADMIN
+
+      at src/middleware/roleMiddleware.ts:10:17
+
+2026-03-09 23:31:22 [ID:fb3f0980-1be1-11f1-a122-33eb8cd84880] [[32minfo[39m]: POST /api/branches 401 0ms {
+  "service": "parcel-management-backend",
+  "method": "POST",
+  "url": "/api/branches",
+  "status": 401,
+  "duration": 0,
+  "ip": "::ffff:127.0.0.1"
+}
+2026-03-09 23:31:22 [ID:fb3e9450-1be1-11f1-a81b-e155fe40605d] [[32minfo[39m]: PATCH /api/users/69af0af27226a6f0eba933a1/status 200 3ms {
+  "service": "parcel-management-backend",
+  "method": "PATCH",
+  "url": "/api/users/69af0af27226a6f0eba933a1/status",
+  "status": 200,
+  "duration": 3,
+  "ip": "::ffff:127.0.0.1"
+}
+  console.log
+    [RoleCheck] URL: /69af0af2c9a2030bdbc31fbf | UserRole: SUPER_ADMIN | ReqRoles: SUPER_ADMIN
+
+      at src/middleware/roleMiddleware.ts:10:17
+
+2026-03-09 23:31:22 [ID:fb3fccd0-1be1-11f1-a122-33eb8cd84880] [[32minfo[39m]: PUT /api/branches/69af0af2c9a2030bdbc31fbf 200 8ms {
+  "service": "parcel-management-backend",
+  "method": "PUT",
+  "url": "/api/branches/69af0af2c9a2030bdbc31fbf",
+  "status": 200,
+  "duration": 8,
+  "ip": "::ffff:127.0.0.1"
+}
+  console.log
+    [RoleCheck] URL: /69af0af2c9a2030bdbc31fbf | UserRole: SUPER_ADMIN | ReqRoles: SUPER_ADMIN
+
+      at src/middleware/roleMiddleware.ts:10:17
+
+  console.log
+    [RoleCheck] URL: /69af0af27226a6f0eba933a9/reset-password | UserRole: SUPER_ADMIN | ReqRoles: SUPER_ADMIN
+
+      at src/middleware/roleMiddleware.ts:10:17
+
+2026-03-09 23:31:22 [ID:fb41a190-1be1-11f1-a122-33eb8cd84880] [[32minfo[39m]: PUT /api/branches/69af0af2c9a2030bdbc31fbf 200 3ms {
+  "service": "parcel-management-backend",
+  "method": "PUT",
+  "url": "/api/branches/69af0af2c9a2030bdbc31fbf",
+  "status": 200,
+  "duration": 3,
+  "ip": "::ffff:127.0.0.1"
+}
+2026-03-09 23:31:22 [ID:fb34a940-1be1-11f1-86e2-1ba44ddcc845] [[32minfo[39m]: POST /api/auth/login 200 239ms {
+  "service": "parcel-management-backend",
+  "method": "POST",
+  "url": "/api/auth/login",
+  "status": 200,
+  "duration": 239,
+  "ip": "::ffff:127.0.0.1"
+}
+2026-03-09 23:31:22 [ID:fb5e7860-1be1-11f1-b27e-454d073ec13b] [[32minfo[39m]: POST /api/bookings 400 1ms {
+  "service": "parcel-management-backend",
+  "method": "POST",
+  "url": "/api/bookings",
+  "status": 400,
+  "duration": 1,
+  "ip": "::ffff:127.0.0.1"
+}
+2026-03-09 23:31:22 [ID:fb41a190-1be1-11f1-a81b-e155fe40605d] [[32minfo[39m]: POST /api/users/69af0af27226a6f0eba933a9/reset-password 200 227ms {
+  "service": "parcel-management-backend",
+  "method": "POST",
+  "url": "/api/users/69af0af27226a6f0eba933a9/reset-password",
+  "status": 200,
+  "duration": 227,
+  "ip": "::ffff:127.0.0.1"
+}
+2026-03-09 23:31:22 [ID:fb825410-1be1-11f1-b27e-454d073ec13b] [[32minfo[39m]: PATCH /api/bookings/69af0af238e88d51b15d6d73/status 200 4ms {
+  "service": "parcel-management-backend",
+  "method": "PATCH",
+  "url": "/api/bookings/69af0af238e88d51b15d6d73/status",
+  "status": 200,
+  "duration": 4,
+  "ip": "::ffff:127.0.0.1"
+}
+PASS src/tests/ledger.test.ts
+  Ledger Endpoints
+    ✓ should add a transaction successfully (87 ms)
+    ✓ should block branch user adding transaction for another branch (19 ms)
+    ✓ should fetch transactions with stats (26 ms)
+    ✓ should enforce branch restrictions on fetching transactions (16 ms)
+
+PASS src/tests/user.test.ts
+  User Endpoints
+    ✓ should create a new user successfully (344 ms)
+    ✓ should fetch all users (14 ms)
+    ✓ should update user status (11 ms)
+    ✓ should reset user password (243 ms)
+
+PASS src/tests/branch.test.ts
+  Branch Endpoints
+    ✓ should fetch branches successfully (public) (62 ms)
+    ✓ should create a branch as admin (303 ms)
+    ✓ should fail creating branch without permissions (5 ms)
+    ✓ should update a branch (20 ms)
+
+2026-03-09 23:31:22 [ID:fb7e5c70-1be1-11f1-86e2-1ba44ddcc845] [[31merror[39m]: 401 - Invalid credentials or password - /api/auth/login - POST - ::ffff:127.0.0.1 {
+  "service": "parcel-management-backend",
+  "stack": "Error: Invalid credentials or password\n    at /Users/vishvampaghadar/Documents/parcel-management-system/backend/src/controllers/authController.ts:38:15\n    at Generator.next (<anonymous>)\n    at fulfilled (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/controllers/authController.ts:5:58)",
+  "path": "/api/auth/login",
+  "method": "POST"
+}
+2026-03-09 23:31:22 [ID:fb7e5c70-1be1-11f1-86e2-1ba44ddcc845] [[32minfo[39m]: POST /api/auth/login 401 245ms {
+  "service": "parcel-management-backend",
+  "method": "POST",
+  "url": "/api/auth/login",
+  "status": 401,
+  "duration": 245,
+  "ip": "::ffff:127.0.0.1"
+}
+2026-03-09 23:31:22 [ID:fbaa7580-1be1-11f1-b27e-454d073ec13b] [[31merror[39m]: 400 - Remarks are required for delivery collection. - /api/bookings/69af0af238e88d51b15d6d83/status - PATCH - ::ffff:127.0.0.1 {
+  "service": "parcel-management-backend",
+  "stack": "Error: Remarks are required for delivery collection.\n    at /Users/vishvampaghadar/Documents/parcel-management-system/backend/src/controllers/bookingController.ts:331:19\n    at Generator.next (<anonymous>)\n    at /Users/vishvampaghadar/Documents/parcel-management-system/backend/src/controllers/bookingController.ts:8:71\n    at new Promise (<anonymous>)\n    at __awaiter (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/controllers/bookingController.ts:4:12)\n    at /Users/vishvampaghadar/Documents/parcel-management-system/backend/src/controllers/bookingController.ts:320:82\n    at /Users/vishvampaghadar/Documents/parcel-management-system/backend/src/middleware/errorHandler.ts:55:9\n    at Layer.handle [as handle_request] (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/vishvampaghadar/Documents/parcel-management-system/node_modules/express/lib/router/route.js:149:13)\n    at /Users/vishvampaghadar/Documents/parcel-management-system/backend/src/middleware/validate.ts:13:20\n    at Generator.next (<anonymous>)\n    at fulfilled (/Users/vishvampaghadar/Documents/parcel-management-system/backend/src/middleware/validate.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "path": "/api/bookings/69af0af238e88d51b15d6d83/status",
+  "method": "PATCH"
+}
+2026-03-09 23:31:22 [ID:fbaa7580-1be1-11f1-b27e-454d073ec13b] [[32minfo[39m]: PATCH /api/bookings/69af0af238e88d51b15d6d83/status 400 2ms {
+  "service": "parcel-management-backend",
+  "method": "PATCH",
+  "url": "/api/bookings/69af0af238e88d51b15d6d83/status",
+  "status": 400,
+  "duration": 2,
+  "ip": "::ffff:127.0.0.1"
+}
+2026-03-09 23:31:23 [ID:fbc6d720-1be1-11f1-86e2-1ba44ddcc845] [[32minfo[39m]: POST /api/auth/login 200 222ms {
+  "service": "parcel-management-backend",
+  "method": "POST",
+  "url": "/api/auth/login",
+  "status": 200,
+  "duration": 222,
+  "ip": "::ffff:127.0.0.1"
+}
+2026-03-09 23:31:23 [ID:fbe8de10-1be1-11f1-86e2-1ba44ddcc845] [[32minfo[39m]: GET /api/auth/refresh 200 2ms {
+  "service": "parcel-management-backend",
+  "method": "GET",
+  "url": "/api/auth/refresh",
+  "status": 200,
+  "duration": 2,
+  "ip": "::ffff:127.0.0.1"
+}
+2026-03-09 23:31:23 [ID:fc0ae500-1be1-11f1-86e2-1ba44ddcc845] [[32minfo[39m]: POST /api/auth/login 200 219ms {
+  "service": "parcel-management-backend",
+  "method": "POST",
+  "url": "/api/auth/login",
+  "status": 200,
+  "duration": 219,
+  "ip": "::ffff:127.0.0.1"
+}
+2026-03-09 23:31:23 [ID:fc2c76c0-1be1-11f1-86e2-1ba44ddcc845] [[32minfo[39m]: POST /api/auth/logout 200 1ms {
+  "service": "parcel-management-backend",
+  "method": "POST",
+  "url": "/api/auth/logout",
+  "status": 200,
+  "duration": 1,
+  "ip": "::ffff:127.0.0.1"
+}
+PASS src/tests/booking.test.ts (5.603 s)
+  Booking Endpoints Integration
+    POST /api/bookings
+      ✓ should create a new booking successfully (339 ms)
+      ✓ should fail if freight is negative (238 ms)
+    Booking Lifecycle
+      ✓ should update booking status to DELIVERED with remarks (239 ms)
+      ✓ should fail updating status to DELIVERED without remarks (260 ms)
+
+PASS src/tests/auth.test.ts (5.613 s)
+  Auth Endpoints
+    ✓ should login successfully with correct credentials (550 ms)
+    ✓ should fail login with incorrect credentials (480 ms)
+    ✓ should refresh token successfully (455 ms)
+    ✓ should logout successfully (442 ms)
+
+Test Suites: 5 passed, 5 total
+Tests:       20 passed, 20 total
+Snapshots:   0 total
+Time:        5.962 s, estimated 9 s
+Ran all test suites matching src/tests.
+Force exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?

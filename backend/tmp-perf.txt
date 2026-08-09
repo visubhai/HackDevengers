@@ -1,0 +1,40 @@
+Connected to DB.
+
+--- DB Stats ---
+Total Bookings: 3046
+
+--- Query Analysis: Date Range ---
+Execution Time: 0ms
+Total Docs Examined: 0
+Index Used: {"isCached":false,"stage":"FETCH","inputStage":{"stage":"IXSCAN","keyPattern":{"createdAt":-1},"indexName":"createdAt_-1","isMultiKey":false,"multiKeyPaths":{"createdAt":[]},"isUnique":false,"isSparse":false,"isPartial":false,"indexVersion":2,"direction":"forward","indexBounds":{"createdAt":["[new Date(1773532799999), new Date(1773446400000)]"]}}}
+
+--- Aggregation Analysis: Stats ---
+Aggregation Execution Time: 61ms
+
+--- Collection Indexes ---
+Name: _id_, Keys: {"_id":1}
+Name: lrNumber_1, Keys: {"lrNumber":1}
+Name: createdAt_-1, Keys: {"createdAt":-1}
+Name: fromBranch_1_createdAt_-1, Keys: {"fromBranch":1,"createdAt":-1}
+Name: toBranch_1_createdAt_-1, Keys: {"toBranch":1,"createdAt":-1}
+Name: toBranch_1_status_1, Keys: {"toBranch":1,"status":1}
+Name: senderBranchId_1, Keys: {"senderBranchId":1}
+Name: receiverBranchId_1, Keys: {"receiverBranchId":1}
+Name: toBranch_1_status_1_createdAt_-1, Keys: {"toBranch":1,"status":1,"createdAt":-1}
+Name: fromBranch_1_status_1_createdAt_-1, Keys: {"fromBranch":1,"status":1,"createdAt":-1}
+Name: status_1_createdAt_-1, Keys: {"status":1,"createdAt":-1}
+Name: senderBranchId_1_createdAt_-1, Keys: {"senderBranchId":1,"createdAt":-1}
+Name: receiverBranchId_1_createdAt_-1, Keys: {"receiverBranchId":1,"createdAt":-1}
+Name: sender.mobile_1, Keys: {"sender.mobile":1}
+Name: receiver.mobile_1, Keys: {"receiver.mobile":1}
+Name: lrIndex_1, Keys: {"lrIndex":1}
+Name: lrPrefix_1, Keys: {"lrPrefix":1}
+Name: lrPrefix_1_lrIndex_-1, Keys: {"lrPrefix":1,"lrIndex":-1}
+Name: deliveredAt_-1, Keys: {"deliveredAt":-1}
+Name: fromBranch_1_deliveredAt_-1, Keys: {"fromBranch":1,"deliveredAt":-1}
+Name: toBranch_1_deliveredAt_-1, Keys: {"toBranch":1,"deliveredAt":-1}
+Name: toBranch_1_status_1_deliveredAt_-1, Keys: {"toBranch":1,"status":1,"deliveredAt":-1}
+Name: status_1_deliveredAt_-1, Keys: {"status":1,"deliveredAt":-1}
+Name: lrPrefix_1_lrIndex_1, Keys: {"lrPrefix":1,"lrIndex":1}
+Name: sender.name_1, Keys: {"sender.name":1}
+Name: receiver.name_1, Keys: {"receiver.name":1}

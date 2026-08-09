@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: parcel-backend
+    env: docker
+    plan: free # Optional: Remove if upgrading
+    dockerContext: .
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: MONGO_URI
+        sync: false # You will be prompted to enter this
+      - key: JWT_SECRET
+        generateValue: true # Generates a random secret
+      - key: PORT
+        value: 3001
+    autoDeploy: true

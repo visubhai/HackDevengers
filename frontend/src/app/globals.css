@@ -1,0 +1,372 @@
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* CORPORATE LIGHT THEME (Slate & Indigo) */
+  --background: #f8fafc;
+  /* Slate 50 */
+  --foreground: #0f172a;
+  /* Slate 900 */
+
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+
+  --primary: #4f46e5;
+  /* Indigo 600 */
+  --primary-foreground: #ffffff;
+
+  --secondary: #e2e8f0;
+  /* Slate 200 */
+  --secondary-foreground: #1e293b;
+  /* Slate 800 */
+
+  --muted: #f1f5f9;
+  /* Slate 100 */
+  --muted-foreground: #64748b;
+  /* Slate 500 */
+
+  --accent: #f1f5f9;
+  /* Slate 100 */
+  --accent-foreground: #0f172a;
+
+  --destructive: #ef4444;
+  /* Red 500 */
+  --destructive-foreground: #ffffff;
+
+  --border: #cbd5e1;
+  /* Slate 300 */
+  --input: #cbd5e1;
+  --ring: #4f46e5;
+
+  /* Radius */
+  --radius: 1rem;
+
+  /* Premium Tokens - Reverted to Solid for Light Mode */
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --header-bg: #020617;
+  --sidebar-bg: #0f172a;
+}
+
+.dark {
+  --background: #020617;
+  /* Slate 950 */
+  --foreground: #f8fafc;
+  /* Slate 50 */
+
+  --card: #0f172a;
+  /* Slate 900 */
+  --card-foreground: #f8fafc;
+
+  --popover: #0f172a;
+  --popover-foreground: #f8fafc;
+
+  --primary: #6366f1;
+  /* Indigo 500 */
+  --primary-foreground: #ffffff;
+
+  --secondary: #1e293b;
+  /* Slate 800 */
+  --secondary-foreground: #f8fafc;
+
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  /* Slate 400 */
+
+  --accent: #1e293b;
+  --accent-foreground: #f8fafc;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --border: #1e293b;
+  --input: #1e293b;
+  --ring: #6366f1;
+
+  /* Premium Tokens Dark - Enhanced for Full Dark Mode */
+  --card-bg: #0f172a;
+  --card-border: #1e293b;
+  --header-bg: #020617;
+  --sidebar-bg: #020617;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  /* Premium Semantic Colors */
+  --color-premium-card: var(--card-bg);
+  --color-premium-border: var(--card-border);
+  --color-premium-header: var(--header-bg);
+  --color-premium-sidebar: var(--sidebar-bg);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: none; /* Prevents pull-to-refresh on mobile PWAs */
+  -webkit-tap-highlight-color: transparent; /* Removes blue tap highlight on mobile Chrome */
+  /* iOS momentum scrolling */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Standard Lenis CSS setup to prevent browser-Lenis fight */
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* The SmoothScrollMain <main> wrapper is a custom Lenis container (not <html>).
+   Ensure it never inherits smooth scroll-behavior, which would cause double-easing. */
+main[data-lenis-wrapper],
+.lenis-wrapper {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Maintain kinetic scrolling on typical mobile containers without conflicting scroll-behavior */
+[class*="overflow-y-auto"],
+[class*="overflow-y-scroll"],
+[class*="overflow-x-auto"],
+[class*="overflow-x-scroll"],
+.overflow-y-auto,
+.overflow-y-scroll,
+.overflow-x-auto,
+.overflow-x-scroll {
+  -webkit-overflow-scrolling: touch; /* iOS kinetic scrolling */
+}
+
+@layer utilities {
+  .glass {
+    background: color-mix(in srgb, var(--card) 85%, transparent);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border);
+  }
+
+  /* ─── Global Smooth Scrollbar ─────────────────────────────── */
+  /* Apply to every scrollable element site-wide */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--muted-foreground) 35%, transparent);
+    border-radius: 999px;
+    transition: background 0.25s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--muted-foreground) 65%, transparent);
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  /* Firefox smooth scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--muted-foreground) 35%, transparent) transparent;
+  }
+
+  /* ─── Named class for explicit usage ──────────────────────── */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--muted-foreground) 35%, transparent);
+    border-radius: 999px;
+    transition: background 0.25s ease;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--muted-foreground) 65%, transparent);
+  }
+
+  /* ─── Slim scrollbar (3px, for dense UI like modals & tables) ── */
+  .custom-scrollbar-slim::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+
+  .custom-scrollbar-slim::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar-slim::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--muted-foreground) 25%, transparent);
+    border-radius: 999px;
+  }
+
+  .custom-scrollbar-slim::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--muted-foreground) 50%, transparent);
+  }
+
+  /* ─── Hide scrollbar visually but keep scroll functional ──── */
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Print Overrides */
+@media print {
+  /* Force 0 margins ONLY for Builty receipts to allow exact CSS positioning */
+  body.print-builty-only {
+    margin: 0 !important;
+  }
+
+  /* Force light mode base variables during print to avoid white text on white paper */
+  body, .dark body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    --background: #ffffff !important;
+    --foreground: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+
+  /* When a modal is open, hide everything except portals */
+  body.modal-open .daily-report-print,
+  body.modal-open .print\:hidden {
+    display: none !important;
+  }
+
+  /* Specific Print Views Logic */
+  body:not(.print-builty-only) .print-builty-container {
+    display: none !important;
+  }
+  
+  body:not(.print-report-only) .daily-report-print {
+    display: none !important;
+  }
+
+  html, body {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Force all layout wrappers to overflow: visible and height: auto during report printing */
+  body.print-report-only,
+  body.print-report-only * {
+    overflow: visible !important;
+  }
+
+  body.print-report-only div,
+  body.print-report-only main {
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  /* Clean display hide when printing report to allow instant Chromium page break calculation */
+  body.print-report-only .daily-report-print {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Multi-page table: rows should break naturally across pages */
+  .daily-report-print table {
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+    width: 100% !important;
+  }
+  .daily-report-print tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  .daily-report-print thead {
+    display: table-header-group !important; /* Repeat header on every page */
+  }
+  .daily-report-print tfoot {
+    display: table-footer-group !important; /* Footer on last page */
+  }
+
+  /* Force components to be visible if they were marked hidden print:block/flex */
+  .print\:block {
+    display: block !important;
+  }
+  .print\:flex {
+    display: flex !important;
+  }
+
+  /* HARD HIDE for everything else when printing builty */
+  body.print-builty-only > *:not(.print-builty-container) {
+    display: none !important;
+  }
+
+  body.print-builty-only .print-builty-container {
+    display: flex !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 21cm !important;
+    background: white !important;
+    z-index: 999999 !important;
+  }
+}
