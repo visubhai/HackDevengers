@@ -8,17 +8,9 @@ export async function POST(request: NextRequest) {
         const body = await request.json();
 
         // Prefer direct backend call; fall back to self-call through the rewrite rule
-        const backendUrl = process.env.BACKEND_URL || process.env.INTERNAL_API_URL;
-
-        let loginUrl: string;
-        if (backendUrl) {
-            const base = backendUrl.endsWith('/') ? backendUrl.slice(0, -1) : backendUrl;
-            loginUrl = `${base}/api/auth/login`;
-        } else {
-            // Self-call: next.config.ts rewrites /api/auth/login → backend
-            const origin = request.nextUrl.origin;
-            loginUrl = `${origin}/api/auth/login`;
-        }
+        const backendUrl = process.env.BACKEND_URL || process.env.INTERNAL_API_URL || 'http://127.0.0.1:3001';
+        const base = backendUrl.endsWith('/') ? backendUrl.slice(0, -1) : backendUrl;
+        const loginUrl = base.endsWith('/api') ? `${base}/auth/login` : `${base}/api/auth/login`;
 
         const res = await fetch(loginUrl, {
             method: 'POST',

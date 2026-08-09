@@ -18,7 +18,7 @@ export type ServiceResponse<T> = {
 const getBaseUrl = () => {
     // If on server, use internal absolute URL
     if (typeof window === 'undefined') {
-        const base = process.env.INTERNAL_API_URL || process.env.BACKEND_URL || 'http://localhost:3001';
+        const base = process.env.INTERNAL_API_URL || process.env.BACKEND_URL || 'http://127.0.0.1:3001';
         return base.endsWith('/api') ? base : `${base}/api`;
     }
     // If on client, use relative URL (proxied by Next.js) or env var

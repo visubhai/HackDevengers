@@ -56,7 +56,7 @@ const nextConfig: NextConfig = {
     ];
   },
   async rewrites() {
-    const backend = process.env.BACKEND_URL || 'http://localhost:3001';
+    const backend = process.env.BACKEND_URL || 'http://127.0.0.1:3001';
     return {
       // beforeFiles runs BEFORE filesystem routes — required to bypass NextAuth's [...nextauth] catch-all
       beforeFiles: [

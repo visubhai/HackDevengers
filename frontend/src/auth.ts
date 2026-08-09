@@ -24,7 +24,7 @@ export const { handlers, signIn, signOut, auth }: any = NextAuth({
                         } else if (process.env.VERCEL_URL) {
                             API_URL = `https://${process.env.VERCEL_URL}/api`;
                         } else {
-                            API_URL = 'http://localhost:3001/api';
+                            API_URL = 'http://127.0.0.1:3001/api';
                         }
                     }
 
@@ -119,7 +119,7 @@ export const { handlers, signIn, signOut, auth }: any = NextAuth({
             // If the access token has expired or is missing, try to refresh it
             // Note: In NextAuth v5, this happens on the server side
             try {
-                let API_URL = process.env.BACKEND_URL || process.env.INTERNAL_API_URL || 'http://localhost:3001/api';
+                let API_URL = process.env.BACKEND_URL || process.env.INTERNAL_API_URL || 'http://127.0.0.1:3001/api';
                 if (API_URL.endsWith('/')) API_URL = API_URL.slice(0, -1);
                 if (!API_URL.endsWith('/api')) API_URL = `${API_URL}/api`;
 
