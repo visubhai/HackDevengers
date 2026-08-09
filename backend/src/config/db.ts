@@ -70,6 +70,28 @@ const connectDB = async () => {
                     isActive: true
                 });
 
+                const passEval = await bcrypt.hash('evaluator123', 10);
+                await User.create({
+                    name: 'Evaluator Super Admin',
+                    email: 'evaluator-admin@logiopen.com',
+                    username: 'evaluator-admin',
+                    password: passEval,
+                    role: 'SUPER_ADMIN',
+                    branch: mainBranch._id,
+                    isActive: true
+                });
+
+                await User.create({
+                    name: 'Evaluator Branch Manager',
+                    email: 'evaluator-branch@logiopen.com',
+                    username: 'evaluator-branch',
+                    password: passEval,
+                    role: 'BRANCH',
+                    branch: mainBranch._id,
+                    branchId: mainBranch._id,
+                    isActive: true
+                });
+
                 console.log('✨ Auto-seed complete! Created default accounts:');
                 console.log('   Username: logiopen | Password: 95008');
                 console.log('   Username: admin    | Password: admin123');

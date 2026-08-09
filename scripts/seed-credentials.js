@@ -38,7 +38,9 @@ const credentials = [
     { u: 'rajkot-limdachok', p: '1234', branch: 'Rajkot Limdachok', state: 'Gujarat' },
     { u: 'katargam', p: 'admin4567', branch: 'Katargam', state: 'Gujarat' },
     { u: 'sachin', p: '1234', branch: 'Sachin', state: 'Gujarat' },
-    { u: 'logiopen', p: '95008', branch: 'Main Branch', role: 'SUPER_ADMIN', state: 'Gujarat' }
+    { u: 'logiopen', p: '95008', branch: 'Main Branch', role: 'SUPER_ADMIN', state: 'Gujarat' },
+    { u: 'evaluator-admin', p: 'evaluator123', branch: 'Main Branch', role: 'SUPER_ADMIN', state: 'Gujarat' },
+    { u: 'evaluator-branch', p: 'evaluator123', branch: 'Mumbai Borivali', role: 'BRANCH', state: 'Maharashtra' }
 ];
 
 async function seed() {

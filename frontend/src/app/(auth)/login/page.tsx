@@ -183,6 +183,40 @@ export default function LoginPage() {
                                     >
                                         {submitting ? <><LoadingSpinner size={20} /> Verifying...</> : <>Login <ArrowRight className="w-5 h-5" /></>}
                                     </button>
+
+                                    {/* Evaluator Quick Access */}
+                                    <div className="mt-6 pt-6 border-t border-white/10">
+                                        <div className="text-center mb-3">
+                                            <span className="text-[11px] font-black uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full shadow-sm inline-flex items-center gap-1.5">
+                                                ⚡ Evaluator Demo Credentials
+                                            </span>
+                                        </div>
+                                        <div className="grid grid-cols-2 gap-2.5">
+                                            <button
+                                                type="button"
+                                                disabled={submitting}
+                                                onClick={() => {
+                                                    setFormData({ username: 'logiopen', password: '95008' });
+                                                }}
+                                                className="flex flex-col items-center justify-center p-3 rounded-2xl bg-white/5 border border-emerald-500/30 hover:border-emerald-400/80 hover:bg-emerald-500/10 text-white transition-all shadow-md group text-left"
+                                            >
+                                                <span className="text-xs font-bold text-emerald-400 group-hover:text-emerald-300">👑 Super Admin</span>
+                                                <span className="text-[11px] text-slate-300 font-mono mt-0.5">logiopen / 95008</span>
+                                            </button>
+
+                                            <button
+                                                type="button"
+                                                disabled={submitting}
+                                                onClick={() => {
+                                                    setFormData({ username: 'mumbai-borivali', password: 'admin3456' });
+                                                }}
+                                                className="flex flex-col items-center justify-center p-3 rounded-2xl bg-white/5 border border-blue-500/30 hover:border-blue-400/80 hover:bg-blue-500/10 text-white transition-all shadow-md group text-left"
+                                            >
+                                                <span className="text-xs font-bold text-blue-400 group-hover:text-blue-300">🏢 Branch Admin</span>
+                                                <span className="text-[11px] text-slate-300 font-mono mt-0.5">mumbai-borivali / admin3456</span>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
                         </>
