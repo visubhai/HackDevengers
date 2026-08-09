@@ -71,11 +71,12 @@ async function seed() {
 
             const userData = {
                 name: cred.branch + ' Admin',
-                email: `${cred.u}@abcd.com`, // Fake email
+                email: `${cred.u}@logiopen.com`,
                 username: cred.u,
                 password: hashedPassword,
-                role: cred.role || 'ADMIN',
+                role: cred.role || 'BRANCH',
                 branch: branch._id,
+                branchId: branch._id,
                 isActive: true
             };
 

@@ -22,6 +22,17 @@ const connectDB = async () => {
 
         console.log(`MongoDB Connected: ${conn.connection.host}`);
         
+        // Auto-fix legacy roles and sync branch -> branchId
+        try {
+            await User.updateMany({ role: 'ADMIN' }, { $set: { role: 'BRANCH' } });
+            await User.updateMany(
+                { branchId: { $exists: false }, branch: { $exists: true } },
+                [{ $set: { branchId: "$branch" } }]
+            );
+        } catch (mErr) {
+            // Ignore
+        }
+        
         // Auto-seed initial super admin if database is empty
         try {
             const userCount = await User.countDocuments();

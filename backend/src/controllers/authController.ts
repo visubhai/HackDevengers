@@ -90,6 +90,9 @@ export const login = catchAsync(async (req: Request, res: Response) => {
     if (user.refreshTokens.length > 5) {
         user.refreshTokens = user.refreshTokens.slice(-5);
     }
+    if (user.role === 'BRANCH' && !user.branchId && user.branch) {
+        user.branchId = user.branch._id || user.branch;
+    }
     await user.save();
 
     // Secure HTTP-Only Cookie for Refresh Token (crucial for React apps)
