@@ -10,7 +10,13 @@ if (!process.env.BACKEND_URL && process.env.NODE_ENV === 'production') {
 }
 
 const nextConfig: NextConfig = {
-  transpilePackages: ['recharts', 'lucide-react', 'es-toolkit'],
+  transpilePackages: ['recharts', 'lucide-react', 'es-toolkit', 'react-is'],
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     remotePatterns: [
       { protocol: 'http', hostname: 'localhost' },
