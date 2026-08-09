@@ -18,7 +18,7 @@ console.log(`Testing SMS to ${mobile}...`);
 console.log(`Using API Key: ${process.env.SMS_API_KEY ? 'Yes (Hidden)' : 'No (Missing)'}`);
 
 (async () => {
-    const success = await smsService.sendSms(mobile, 'Test Message from Savan Logistics System.');
+    const success = await smsService.sendSms(mobile, 'Test Message from LogiOpen Logistics System.');
     if (success) {
         console.log('✅ SMS Sent Successfully!');
     } else {

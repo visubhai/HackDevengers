@@ -52,7 +52,7 @@ export const DatabaseManagement = () => {
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `savan-backup-${beforeDate}.xlsx`;
+            a.download = `logiopen-backup-${beforeDate}.xlsx`;
             document.body.appendChild(a);
             a.click();
             a.remove();

@@ -84,8 +84,8 @@ export function Sidebar() {
                         <div className="flex items-center gap-3">
                             <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0 bg-white shadow-lg overflow-hidden border border-white/20 p-0.5 relative">
                                 <Image
-                                    src="/images/savan-logo.png"
-                                    alt="Savan Travels Logo"
+                                    src="/images/logiopen-logo.png"
+                                    alt="LogiOpen Logistics Logo"
                                     fill
                                     sizes="48px"
                                     className="object-cover rounded-full"
@@ -95,8 +95,8 @@ export function Sidebar() {
                                 "text-xl font-bold tracking-tight text-white transition-opacity duration-300 whitespace-nowrap flex flex-col items-start leading-tight",
                                 isHovered ? "opacity-100" : "lg:opacity-0 lg:w-0 opacity-100"
                             )}>
-                                SAVAN
-                                <span className="text-[#f25c05] text-sm uppercase tracking-wider">Travels</span>
+                                LOGIOPEN
+                                <span className="text-primary text-sm uppercase tracking-wider">Logistics</span>
                             </h1>
                         </div>
                     </div>

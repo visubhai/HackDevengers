@@ -24,21 +24,21 @@ const BranchSchema = new mongoose.Schema({
 const Branch = mongoose.models.Branch || mongoose.model('Branch', BranchSchema);
 
 const credentials = [
-    { u: 'mumbai-borivali', p: 'savan3456', branch: 'Mumbai Borivali', state: 'Maharashtra' },
-    { u: 'amdavad-ctm', p: 'savan6734', branch: 'Amdavad CTM', state: 'Gujarat' },
-    { u: 'mumbai-andheri', p: 'savan4598', branch: 'Mumbai Andheri', state: 'Maharashtra' },
+    { u: 'mumbai-borivali', p: 'admin3456', branch: 'Mumbai Borivali', state: 'Maharashtra' },
+    { u: 'amdavad-ctm', p: 'admin6734', branch: 'Amdavad CTM', state: 'Gujarat' },
+    { u: 'mumbai-andheri', p: 'admin4598', branch: 'Mumbai Andheri', state: 'Maharashtra' },
     { u: 'setelite', p: '444245', branch: 'Setelite', state: 'Gujarat' },
-    { u: 'mumbai-vasai', p: 'savan2356', branch: 'Mumbai Vasai', state: 'Maharashtra' },
+    { u: 'mumbai-vasai', p: 'admin2356', branch: 'Mumbai Vasai', state: 'Maharashtra' },
     { u: 'udhana', p: '1234', branch: 'Udhana', state: 'Gujarat' },
     { u: 'bapunagar', p: '888942', branch: 'Bapunagar', state: 'Gujarat' },
-    { u: 'hirabagh', p: 'savan8980', branch: 'Hirabagh', state: 'Gujarat' },
+    { u: 'hirabagh', p: 'admin8980', branch: 'Hirabagh', state: 'Gujarat' },
     { u: 'rajkot-punitnagar', p: '1234', branch: 'Rajkot Punitnagar', state: 'Gujarat' },
     { u: 'sahara', p: '1234', branch: 'Sahara', state: 'Gujarat' },
     { u: 'paldi', p: '994142', branch: 'Paldi', state: 'Gujarat' },
     { u: 'rajkot-limdachok', p: '1234', branch: 'Rajkot Limdachok', state: 'Gujarat' },
-    { u: 'katargam', p: 'savan4567', branch: 'Katargam', state: 'Gujarat' },
+    { u: 'katargam', p: 'admin4567', branch: 'Katargam', state: 'Gujarat' },
     { u: 'sachin', p: '1234', branch: 'Sachin', state: 'Gujarat' },
-    { u: 'savan', p: '95008', branch: 'Main Branch', role: 'SUPER_ADMIN', state: 'Gujarat' }
+    { u: 'logiopen', p: '95008', branch: 'Main Branch', role: 'SUPER_ADMIN', state: 'Gujarat' }
 ];
 
 async function seed() {

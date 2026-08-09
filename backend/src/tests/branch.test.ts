@@ -117,7 +117,7 @@ describe('Branch Endpoints', () => {
         const user = await User.create({
             name: 'Old Name Admin',
             username: 'old',
-            email: 'old@savan.com',
+            email: 'old@logiopen.com',
             password: 'password123',
             branchId: branch._id,
             isActive: true
@@ -136,7 +136,7 @@ describe('Branch Endpoints', () => {
         // Check if user was also updated
         const updatedUser = await User.findById(user._id);
         expect(updatedUser?.username).toBe('newcode');
-        expect(updatedUser?.email).toBe('newcode@savan.com');
+        expect(updatedUser?.email).toBe('newcode@logiopen.com');
     });
 
     it('should update a branch code and reflect username update even when old username is sent in payload', async () => {
@@ -149,7 +149,7 @@ describe('Branch Endpoints', () => {
         const user = await User.create({
             name: 'Old Name Admin',
             username: 'old',
-            email: 'old@savan.com',
+            email: 'old@logiopen.com',
             password: 'password123',
             branchId: branch._id,
             isActive: true
@@ -169,6 +169,6 @@ describe('Branch Endpoints', () => {
         // Check if user was also updated
         const updatedUser = await User.findById(user._id);
         expect(updatedUser?.username).toBe('newcode');
-        expect(updatedUser?.email).toBe('newcode@savan.com');
+        expect(updatedUser?.email).toBe('newcode@logiopen.com');
     });
 });

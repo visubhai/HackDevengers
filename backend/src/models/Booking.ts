@@ -1,5 +1,6 @@
 import mongoose, { Schema, Document } from 'mongoose';
 import mongooseFieldEncryption from 'mongoose-field-encryption';
+import crypto from 'crypto';
 const fieldEncryption = mongooseFieldEncryption.fieldEncryption;
 
 export interface IBooking extends Document {
@@ -44,6 +45,12 @@ export interface IBooking extends Document {
         newRemark: string;
         editedBy: mongoose.Types.ObjectId;
         editedAt: Date;
+    }>;
+    trackingLedger: Array<{
+        status: string;
+        timestamp: Date;
+        hash: string;
+        previousHash: string;
     }>;
     createdAt: Date;
     updatedAt: Date;
@@ -100,6 +107,12 @@ const BookingSchema = new Schema<IBooking>({
         newRemark: { type: String, required: true },
         editedBy: { type: Schema.Types.ObjectId, ref: 'User', required: true },
         editedAt: { type: Date, default: Date.now }
+    }],
+    trackingLedger: [{
+        status: { type: String, required: true },
+        timestamp: { type: Date, default: Date.now },
+        hash: { type: String, required: true },
+        previousHash: { type: String, required: true }
     }]
 }, { timestamps: true });
 
@@ -132,6 +145,28 @@ BookingSchema.plugin(fieldEncryption, {
     fields: ["sender.name", "sender.mobile", "sender.email", "receiver.name", "receiver.mobile", "receiver.email"],
     secret: process.env.ENCRYPTION_KEY || 'default_insecure_development_key_32_bytes!',
     saltGenerator: function (secret: string) { return "1234567890123456"; } // Standardize salt for simple setup
+});
+
+// Cryptographic Status Ledger (Tamper-Proof Audit Trail)
+BookingSchema.pre('save', function (next) {
+    if (this.isModified('status') || this.isNew) {
+        const lastIndex = this.trackingLedger.length - 1;
+        const previousHash = lastIndex >= 0 ? this.trackingLedger[lastIndex].hash : 'genesis_block';
+        
+        const timestamp = new Date();
+        const dataToHash = `${this.lrNumber}-${this.status}-${timestamp.toISOString()}-${previousHash}`;
+        const hash = crypto.createHmac('sha256', process.env.ENCRYPTION_KEY || 'default_key')
+            .update(dataToHash)
+            .digest('hex');
+
+        this.trackingLedger.push({
+            status: this.status,
+            timestamp,
+            hash,
+            previousHash
+        });
+    }
+    next();
 });
 
 // Prevent Mongoose OverwriteModelError in HMR environment, but force schema update

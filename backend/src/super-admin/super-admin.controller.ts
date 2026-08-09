@@ -320,7 +320,7 @@ export const downloadDatabaseBackup = catchAsync(async (req: AuthRequest, res: R
         .lean();
 
     const workbook = new ExcelJS.Workbook();
-    workbook.creator = 'Savan Travels System';
+    workbook.creator = 'LogiOpen Logistics System';
 
     // Sheet 1: Meta
     const metaSheet = workbook.addWorksheet('Meta Info');
@@ -455,7 +455,7 @@ export const downloadDatabaseBackup = catchAsync(async (req: AuthRequest, res: R
     }
 
     res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    res.setHeader('Content-Disposition', `attachment; filename="savan-backup-${targetDateBefore.toISOString().split('T')[0]}.xlsx"`);
+    res.setHeader('Content-Disposition', `attachment; filename="logiopen-backup-${targetDateBefore.toISOString().split('T')[0]}.xlsx"`);
 
     await workbook.xlsx.write(res);
     return res.end();
@@ -522,7 +522,7 @@ export const getSystemSettings = catchAsync(async (req: AuthRequest, res: Respon
         { key: 'WHATSAPP_NOTIFICATIONS', value: true, description: 'Auto-send WhatsApp message to receiver after saving booking' },
         { key: 'PRINT_HEADER', value: false, description: 'Print company branding on receipts' },
         { key: 'HEADER_MARGIN', value: '1.5cm', description: 'Top margin for pre-printed pads' },
-        { key: 'COMPANY_NAME', value: 'SAVAN TRAVELS', description: 'Main business name on reports/bills' },
+        { key: 'COMPANY_NAME', value: 'LOGIOPEN LOGISTICS', description: 'Main business name on reports/bills' },
         { key: 'COMPANY_TAGLINE', value: 'Express Parcel Service', description: 'Tagline shown under name' },
         { key: 'COMPANY_ADDRESS', value: 'Main Market, Opp. Central Bank, Surat', description: 'Full office address for stationery' },
         { key: 'COMPANY_CONTACT', value: '+91 9988776655, +91 8877665544', description: 'Support phone numbers' },

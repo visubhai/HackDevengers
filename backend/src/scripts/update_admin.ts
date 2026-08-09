@@ -23,18 +23,18 @@ async function updateAdmin() {
         await User.deleteOne({ username: 'admin' });
         console.log('✅ Removed.');
 
-        // Create new savan admin
-        console.log('🌱 Creating SAVAN Master Administrator (savan_admin)...');
-        const adminHash = await bcrypt.hash('Savan@2024!', 12);
+        // Create new logiopen admin
+        console.log('🌱 Creating LogiOpen Master Administrator (logiopen_admin)...');
+        const adminHash = await bcrypt.hash('Admin@2024!', 12);
         await User.create({
-            name: 'Savan Master Admin',
-            email: 'master@savanamtravels.com',
-            username: 'savan_admin',
+            name: 'LogiOpen Master Admin',
+            email: 'master@logiopen.com',
+            username: 'logiopen_admin',
             password: adminHash,
             role: 'SUPER_ADMIN',
             isActive: true
         });
-        console.log('✅ Savan Master Admin created.');
+        console.log('✅ LogiOpen Master Admin created.');
 
         console.log('\n✨ Admin Access Update Complete!');
         process.exit(0);

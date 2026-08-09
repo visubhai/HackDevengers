@@ -130,7 +130,7 @@ export const createBranch = catchAsync(async (req: AuthRequest, res: Response) =
         const [newUser] = await User.create([{
             name: `${name} Admin`,
             username: username || branchCode.toLowerCase(),
-            email: `${branchCode.toLowerCase()}@savan.com`,
+            email: `${branchCode.toLowerCase()}@logiopen.com`,
             password: hashedPassword,
             role: isSuperAdmin ? 'SUPER_ADMIN' : 'BRANCH',
             branchId: newBranch._id,
@@ -212,7 +212,7 @@ export const updateBranch = catchAsync(async (req: AuthRequest, res: Response) =
         }
 
         if (body.branchCode) {
-            userUpdates.email = `${body.branchCode.toLowerCase()}@savan.com`;
+            userUpdates.email = `${body.branchCode.toLowerCase()}@logiopen.com`;
             if (!username || username === oldBranchCodeLower) {
                 userUpdates.username = body.branchCode.toLowerCase();
             }

@@ -301,7 +301,7 @@ export function InboundTable() {
             {/* Print View */}
             <div className="hidden print:block daily-report-print">
                 <div className="mb-4">
-                    <h1 className="text-2xl font-black text-black uppercase">Savan Transport</h1>
+                    <h1 className="text-2xl font-black text-black uppercase">LogiOpen Transport</h1>
                     <p className="text-xs font-bold text-gray-500 uppercase">Godown Stock Report</p>
                 </div>
                 <SafePrintReportTable data={fullPrintData} dateRange={dateRangeStr} />

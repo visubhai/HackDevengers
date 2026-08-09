@@ -15,7 +15,7 @@ export const runDatabaseBackup = async () => {
         }
 
         const dateStr = new Date().toISOString().split('T')[0];
-        const fileName = `savan-backup-${dateStr}.xlsx`;
+        const fileName = `logiopen-backup-${dateStr}.xlsx`;
         const filePath = path.join(backupDir, fileName);
 
         const workbook = new ExcelJS.Workbook();

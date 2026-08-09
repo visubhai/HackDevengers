@@ -329,7 +329,7 @@ export const getBookings = catchAsync(async (req: AuthRequest, res: Response) =>
     const companyName = await getSetting('COMPANY_NAME');
     const companyTagline = await getSetting('COMPANY_TAGLINE');
     const branding = {
-        name: companyName || 'SAVAN TRAVELS',
+        name: companyName || 'LOGIOPEN LOGISTICS',
         tagline: companyTagline || ''
     };
 
@@ -490,7 +490,7 @@ export const createBooking = catchAsync(async (req: AuthRequest, res: Response) 
                 getSetting('WHATSAPP_NOTIFICATIONS')
             ]);
             
-            const companyNameLabel = companyName || 'SAVAN TRAVELS';
+            const companyNameLabel = companyName || 'LOGIOPEN LOGISTICS';
             const globalEnabled = whatsappEnabledSetting !== null ? whatsappEnabledSetting === true : true;
             const branchEnabled = fromBranch?.whatsappNotificationsEnabled !== false;
             

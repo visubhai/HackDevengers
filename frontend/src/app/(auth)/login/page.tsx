@@ -110,12 +110,9 @@ export default function LoginPage() {
     return (
         <div className="min-h-screen relative flex items-center justify-center font-sans overflow-hidden">
             {/* Background */}
-            <div
-                className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-1000 hover:scale-105"
-                style={{ backgroundImage: "url('/images/bg-bus.jpg')" }}
-            >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0a2e1f]/90 via-[#05110c]/80 to-[#103a27]/90 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0 z-0 bg-slate-950">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0a2e1f]/60 via-slate-950 to-[#103a27]/60" />
+                <div className="absolute inset-0 bg-black/20" />
             </div>
 
             <div className="absolute top-[10%] left-[15%] w-64 h-64 bg-green-500/20 rounded-full blur-[100px] animate-pulse" />
@@ -131,7 +128,7 @@ export default function LoginPage() {
                             <div className="text-center mb-10 flex flex-col items-center">
                                 <div className="w-24 h-24 rounded-full bg-white shadow-xl shadow-orange-500/20 overflow-hidden border-2 border-white/10 mb-4 p-1">
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img src="/images/savan-logo.png" alt="Savan Travels" className="w-full h-full object-cover rounded-full" />
+                                    <img src="/images/logiopen-logo.png" alt="LogiOpen Logistics" className="w-full h-full object-cover rounded-full" />
                                 </div>
                                 <h2 className="text-2xl font-bold text-white mb-2">Secure Logistics Portal</h2>
                                 <p className="text-green-100/60 text-sm">Manage your shipments efficiently</p>
@@ -243,7 +240,7 @@ export default function LoginPage() {
 
                 <div className="mt-8 text-center">
                     <p className="text-white/30 text-[10px] uppercase tracking-[0.2em]">
-                        &copy; {new Date().getFullYear()} SAVAN TRAVELS • ALL RIGHTS RESERVED
+                        &copy; {new Date().getFullYear()} LOGIOPEN LOGISTICS • ALL RIGHTS RESERVED
                     </p>
                 </div>
             </div>

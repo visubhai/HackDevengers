@@ -38,12 +38,12 @@ async function cleanup() {
 
         console.log('✅ All data cleared.');
 
-        console.log('🌱 Creating SAVAN Master Administrator...');
-        const adminHash = await bcrypt.hash('Savan@2024!', 12);
+        console.log('🌱 Creating LogiOpen Master Administrator...');
+        const adminHash = await bcrypt.hash('Admin@2024!', 12);
         await User.create({
-            name: 'Savan Master Admin',
-            email: 'master@savanamtravels.com',
-            username: 'savan_admin',
+            name: 'LogiOpen Master Admin',
+            email: 'master@logiopen.com',
+            username: 'logiopen_admin',
             password: adminHash,
             role: 'SUPER_ADMIN',
             isActive: true

@@ -13,7 +13,7 @@ dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/parcel-management';
 
 const branchesData = [
-    { name: 'SAVAN', branchCode: 'SVN', state: 'GUJARAT', address: 'Main Terminal, Surat', phone: '9900112233', isSuperAdmin: true },
+    { name: 'LOGIOPEN', branchCode: 'LGP', state: 'GUJARAT', address: 'Main Terminal, Surat', phone: '9900112233', isSuperAdmin: true },
     { name: 'KATARAGAM', branchCode: 'KTG', state: 'GUJARAT', address: 'Gajera Circle, Surat', phone: '9011223344' },
     { name: 'VARACHHA', branchCode: 'VRC', state: 'GUJARAT', address: 'Mini Bazar, Surat', phone: '9011223355' },
     { name: 'ADAJAN', branchCode: 'ADJ', state: 'GUJARAT', address: 'Honey Park Road, Surat', phone: '9011223366' },
@@ -50,25 +50,25 @@ async function seed() {
             createdBranches.push(branch);
         }
 
-        const savanBranch = createdBranches.find(b => b.branchCode === 'SVN');
+        const logiopenBranch = createdBranches.find(b => b.branchCode === 'SVN');
         const otherBranches = createdBranches.filter(b => b.branchCode !== 'SVN');
 
         console.log('👥 Seeding Users and Admins...');
         const password = await bcrypt.hash('password123', 12);
         
-        // 1. Create Super Admin (Savan)
+        // 1. Create Super Admin (LogiOpen)
         await User.create({
-            name: 'Savan Super Admin',
-            email: 'admin@savan.com',
-            username: 'savan',
+            name: 'LogiOpen Super Admin',
+            email: 'admin@logiopen.com',
+            username: 'logiopen',
             password: password,
             role: 'SUPER_ADMIN',
-            branchId: savanBranch?._id,
+            branchId: logiopenBranch?._id,
             isActive: true,
             allowedBranches: createdBranches.map(b => b._id),
             allowedReports: ["DAILY_REPORT", "DELIVERY_REPORT", "LEDGER_REPORT", "SUMMARY_REPORT", "BOOKING_REPORT"]
         });
-        console.log(`👑 Created Super Admin: savan`);
+        console.log(`👑 Created Super Admin: logiopen`);
 
         // 2. Create Branch Admins
         for (const branch of otherBranches) {
@@ -160,7 +160,7 @@ async function seed() {
 
         console.log('\n✨ Database transformation complete!');
         console.log('   - 11 Branches created');
-        console.log('   - 1 Super Admin (savan) created');
+        console.log('   - 1 Super Admin (logiopen) created');
         console.log('   - 10 Branch Admins created');
         console.log('   - 1000 Parcels generated');
         process.exit(0);

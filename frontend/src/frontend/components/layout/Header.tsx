@@ -109,7 +109,7 @@ export function Header() {
                 {/* Mobile Logo replacing hamburger */}
                 <div className="md:hidden flex items-center shrink-0">
                     <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center p-0.5 overflow-hidden">
-                        <img src="/images/savan-logo.png" alt="Logo" className="w-full h-full object-cover rounded-full" />
+                        <img src="/images/logiopen-logo.png" alt="Logo" className="w-full h-full object-cover rounded-full" />
                     </div>
                 </div>
 

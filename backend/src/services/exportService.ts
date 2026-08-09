@@ -7,7 +7,7 @@ export const exportService = {
     async generatePDF(res: Response, data: any[], metadata: { branchName: string, reportType: string, dateRange: string, generatedBy: string, branding: { name: string, tagline?: string } }) {
         const doc = new jsPDF({ orientation: 'landscape' });
         const timestamp = new Date().toLocaleString();
-        const companyName = metadata.branding?.name || 'SAVAN TRAVELS';
+        const companyName = metadata.branding?.name || 'LOGIOPEN LOGISTICS';
 
         // Filter out cancelled bookings for the report
         const filteredData = data.filter(r => r.status !== 'CANCELLED');
@@ -129,7 +129,7 @@ export const exportService = {
     async generateExcel(res: Response, data: any[], metadata: { branchName: string, reportType: string, dateRange: string, generatedBy: string, branding: { name: string, tagline?: string } }) {
         const workbook = new ExcelJS.Workbook();
         const worksheet = workbook.addWorksheet('Report');
-        const companyName = metadata.branding?.name || 'SAVAN TRAVELS';
+        const companyName = metadata.branding?.name || 'LOGIOPEN LOGISTICS';
 
         // Styles
         const headerStyle: Partial<ExcelJS.Style> = {

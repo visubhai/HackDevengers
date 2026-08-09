@@ -183,7 +183,7 @@ export default function DeliveredPage() {
             {/* Desktop: shown only in print media */}
             <div className="hidden print:block daily-report-print">
                 <div className="mb-4">
-                    <h1 className="text-2xl font-black text-black uppercase">Savan Transport</h1>
+                    <h1 className="text-2xl font-black text-black uppercase">LogiOpen Transport</h1>
                     <p className="text-xs font-bold text-gray-500 uppercase">Delivered Parcels Log</p>
                 </div>
                 <SafePrintReportTable data={fullPrintData} dateRange={dateRangeStr} />
@@ -211,7 +211,7 @@ export default function DeliveredPage() {
                 {fullPrintData.length > 0 && (
                     <>
                         <div style={{ marginBottom: '6px', borderBottom: '3px solid black', paddingBottom: '4px' }}>
-                            <h1 style={{ fontSize: '36px', fontWeight: 900, color: '#000', textTransform: 'uppercase', margin: 0 }}>Savan Transport</h1>
+                            <h1 style={{ fontSize: '36px', fontWeight: 900, color: '#000', textTransform: 'uppercase', margin: 0 }}>LogiOpen Transport</h1>
                             <p style={{ fontSize: '18px', fontWeight: 700, color: '#555', textTransform: 'uppercase', margin: 0 }}>Delivered Parcels Log</p>
                         </div>
                         <SafePrintReportTable data={fullPrintData} dateRange={dateRangeStr} />

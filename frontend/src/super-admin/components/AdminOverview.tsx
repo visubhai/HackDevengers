@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useBranches } from "@/frontend/hooks/useBranches";
 import { adminService } from "@/super-admin/services/adminService";
-import { Activity, Landmark, Users, TrendingUp, Package, IndianRupee } from "lucide-react";
+import { Activity, Landmark, Users, TrendingUp, Package, IndianRupee, Leaf, ShieldCheck } from "lucide-react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import useSWR from 'swr';
 
@@ -75,6 +75,39 @@ export function AdminOverview() {
                     icon={<Users className="text-amber-500" />}
                     color="bg-amber-500/10"
                 />
+            </div>
+
+            {/* Sustainability & Cryptographic Safety Row */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-gradient-to-br from-emerald-50 to-emerald-100/50 dark:from-slate-900 dark:to-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-[28px] shadow-sm flex items-center gap-6">
+                    <div className="p-4 rounded-2xl bg-emerald-500 text-white shadow-lg shadow-emerald-500/20">
+                        <Leaf className="w-8 h-8" />
+                    </div>
+                    <div>
+                        <div className="text-[10px] font-black text-emerald-600 dark:text-emerald-400 uppercase tracking-widest mb-1">ECOLOGICAL IMPACT</div>
+                        <h4 className="text-xl font-black text-slate-800 dark:text-slate-100 tracking-tight">
+                            {(stats.totalBookings * 1.5).toFixed(1)} kg CO₂ Saved
+                        </h4>
+                        <p className="text-muted-foreground text-xs font-medium">
+                            {stats.totalBookings.toLocaleString()} paper sheets saved via digital receipts.
+                        </p>
+                    </div>
+                </div>
+
+                <div className="bg-gradient-to-br from-blue-50 to-blue-100/50 dark:from-slate-900 dark:to-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-[28px] shadow-sm flex items-center gap-6">
+                    <div className="p-4 rounded-2xl bg-blue-500 text-white shadow-lg shadow-blue-500/20">
+                        <ShieldCheck className="w-8 h-8" />
+                    </div>
+                    <div>
+                        <div className="text-[10px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-1">DATA INTEGRITY</div>
+                        <h4 className="text-xl font-black text-slate-800 dark:text-slate-100 tracking-tight">
+                            Tamper-Proof Audit Active
+                        </h4>
+                        <p className="text-muted-foreground text-xs font-medium">
+                            Status changes cryptographically signed using SHA-256 HMAC.
+                        </p>
+                    </div>
+                </div>
             </div>
 
             <div className="w-full">

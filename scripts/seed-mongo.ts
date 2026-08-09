@@ -17,21 +17,21 @@ if (!MONGODB_URI) {
 }
 
 const seedData = [
-    { branch: 'mumbai-borivali', pass: 'savan3456', state: 'Maharashtra' },
-    { branch: 'amdavad-ctm', pass: 'savan6734', state: 'Gujarat' },
-    { branch: 'mumbai-andheri', pass: 'savan4598', state: 'Maharashtra' },
+    { branch: 'mumbai-borivali', pass: 'admin3456', state: 'Maharashtra' },
+    { branch: 'amdavad-ctm', pass: 'admin6734', state: 'Gujarat' },
+    { branch: 'mumbai-andheri', pass: 'admin4598', state: 'Maharashtra' },
     { branch: 'setelite', pass: '444245', state: 'Gujarat' },
-    { branch: 'mumbai-vasai', pass: 'savan2356', state: 'Maharashtra' },
+    { branch: 'mumbai-vasai', pass: 'admin2356', state: 'Maharashtra' },
     { branch: 'udhana', pass: '1234', state: 'Gujarat' },
     { branch: 'bapunagar', pass: '888942', state: 'Gujarat' },
-    { branch: 'hirabagh', pass: 'savan8980', state: 'Gujarat' },
+    { branch: 'hirabagh', pass: 'admin8980', state: 'Gujarat' },
     { branch: 'rajkot-punitnagar', pass: '1234', state: 'Gujarat' },
     { branch: 'sahara', pass: '1234', state: 'Gujarat' },
     { branch: 'paldi', pass: '994142', state: 'Gujarat' },
     { branch: 'rajkot-limdachok', pass: '1234', state: 'Gujarat' },
-    { branch: 'katargam', pass: 'savan4567', state: 'Gujarat' },
+    { branch: 'katargam', pass: 'admin4567', state: 'Gujarat' },
     { branch: 'sachin', pass: '1234', state: 'Gujarat' },
-    { branch: 'savan', pass: '95008', state: 'Gujarat' }
+    { branch: 'logiopen', pass: '95008', state: 'Gujarat' }
 ];
 
 const senderNames = ['Rajesh Kumar', 'Suresh Patel', 'Amit Shah', 'Priya Mehta', 'Rahul Varma'];

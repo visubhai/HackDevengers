@@ -1,7 +1,7 @@
 {
-    "name": "Savan Travels Parcel Management",
-    "short_name": "Savan Parcel",
-    "description": "Enterprise-grade Parcel Management System for Savan Travels",
+    "name": "LogiOpen Logistics Parcel Management",
+    "short_name": "LogiOpen Parcel",
+    "description": "Enterprise-grade Parcel Management System for LogiOpen Logistics",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#0f172a",

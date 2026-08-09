@@ -17,14 +17,14 @@ async function run() {
         console.log('✅ Connected to MongoDB.');
 
         const result = await mongoose.connection.collection('users').updateOne(
-            { username: 'savan' },
+            { username: 'logiopen' },
             { $set: { role: 'SUPER_ADMIN' } }
         );
 
         if (result.matchedCount === 0) {
-            console.log('⚠️ No user found with username: savan');
+            console.log('⚠️ No user found with username: logiopen');
         } else {
-            console.log('✅ Success! Savan promoted to SUPER_ADMIN.');
+            console.log('✅ Success! LogiOpen promoted to SUPER_ADMIN.');
             console.log(`- Matched: ${result.matchedCount}`);
             console.log(`- Modified: ${result.modifiedCount}`);
         }

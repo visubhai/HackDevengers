@@ -38,7 +38,7 @@ async function cleanup() {
         const adminHash = await bcrypt.hash('admin123', 10);
         const admin = await User.create({
             name: 'System Administrator',
-            email: 'admin@savanlogistics.com',
+            email: 'admin@logiopen.com',
             username: 'admin',
             password: adminHash,
             role: 'SUPER_ADMIN',

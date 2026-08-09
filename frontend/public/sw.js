@@ -1,7 +1,7 @@
-const CACHE_NAME = 'savan-parcel-v3';
+const CACHE_NAME = 'logiopen-parcel-v3';
 const STATIC_ASSETS = [
     '/manifest.json',
-    '/images/savan-logo.png',
+    '/images/logiopen-logo.png',
     '/icon.png'
 ];
 

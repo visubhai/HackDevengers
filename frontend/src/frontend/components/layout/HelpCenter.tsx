@@ -29,7 +29,7 @@ const FAQ_ITEMS = [
         category: 'Support',
         icon: MessageSquare,
         items: [
-            { q: 'Contact System Admin', a: 'For technical issues, contact the Super Admin at support@savan.com or use the contact numbers listed in System Settings.' }
+            { q: 'Contact System Admin', a: 'For technical issues, contact the Super Admin at support@logiopen.com or use the contact numbers listed in System Settings.' }
         ]
     }
 ];

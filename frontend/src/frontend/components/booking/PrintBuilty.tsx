@@ -19,7 +19,7 @@ export const PrintBuilty = ({ booking, branches, systemSettings }: PrintBuiltyPr
     };
 
     const printHeader = getSetting('PRINT_HEADER', false);
-    const companyName = getSetting('COMPANY_NAME', 'SAVAN TRAVELS');
+    const companyName = getSetting('COMPANY_NAME', 'LOGIOPEN LOGISTICS');
     const tagline = getSetting('COMPANY_TAGLINE', 'Express Parcel Service');
     const contact = getSetting('COMPANY_CONTACT', '');
 

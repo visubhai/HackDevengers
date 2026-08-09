@@ -105,7 +105,7 @@ export const { handlers, signIn, signOut, auth }: any = NextAuth({
                 token.username = user.username;
                 token.accessToken = user.accessToken;
                 token.allowedBranches = user.allowedBranches || [];
-                token.email = user.email || `${user.branchName?.toLowerCase().replace(/\s+/g, '') || 'user'}@savan.com`;
+                token.email = user.email || `${user.branchName?.toLowerCase().replace(/\s+/g, '') || 'user'}@logiopen.com`;
                 
                 // Add a timestamp for when the token was created
                 token.accessTokenExpires = Date.now() + 7 * 24 * 60 * 60 * 1000; // 7 days (Sync with backend)

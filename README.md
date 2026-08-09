@@ -1,23 +1,12 @@
 # 🚚 LogiOpen — Open-Source Logistics & Branch Operations Platform
 
-Welcome to **LogiOpen**, an open-source, multi-tenant Logistics ERP system designed to democratize access to enterprise-grade supply chain software. LogiOpen empowers small-to-medium transport companies and local carriers with real-time parcel tracking, automated digital invoicing, and multi-branch operations.
-
-This project was built and submitted as part of the **Open Innovation Hackathon** to solve fragmentation, high licensing barriers, and paper waste in regional logistics networks.
-
----
-
-## 💡 The Open Innovation Vision
-
-Traditional logistics systems are proprietary, closed off, and expensive, preventing local and regional transporters from digitizing their operations. **LogiOpen** solves this through:
-1. **Democratization of Tech**: A self-hostable, multi-tenant platform that any local carrier can deploy out-of-the-box.
-2. **Open APIs & Interoperability**: Built with a REST-first architecture, allowing local merchants, e-commerce sites, and other shipping hubs to query tracking details and insert bookings.
-3. **Eco-Friendly Supply Chain**: Fully digital "Builty" (PDF receipts) and automated customer tracking notifications (via WhatsApp) to move local freight operations toward a zero-paper future.
+Welcome to **LogiOpen**, an enterprise-grade, open-source multi-tenant Logistics ERP system designed to democratize access to supply chain software. LogiOpen empowers transport companies and carriers with real-time parcel tracking, automated digital invoicing (PDF generation), role-based branch isolation, and instant customer notification workflows.
 
 ---
 
 ## 🏗️ System Architecture
 
-LogiOpen is designed as a modular monorepo, keeping client-side UI and backend APIs separate and flexible.
+LogiOpen is designed as a modular monorepo, keeping client-side UI and backend REST APIs separate, flexible, and scalable.
 
 ```mermaid
 graph TD
@@ -27,6 +16,8 @@ graph TD
     Backend -->|WhatsApp-Web.js| SMS[WhatsApp Notifications]
     Backend -->|jsPDF Engine| Docs[PDF Generation]
 ```
+
+> 📖 **Architecture & Deep Dive**: For a technical breakdown of our database transaction safety (ACID), field-level database encryption, Redis cache-aside implementation, and API security structures, check out our [System Design & Architecture Guide](ARCHITECTURE.md).
 
 ---
 
@@ -47,11 +38,11 @@ stateDiagram-v2
 
 ## ✨ Key Features
 
-- 🏢 **Multi-Tenant / Multi-Branch isolation**: Clean role-based data visibility configured for Super Admins and Branch Operators.
-- 🔐 **Role-Based Access Control (RBAC)**: Secure access paths and settings isolation for administrators and counter operators.
-- 📦 **End-to-End Parcel Management**: Intuitive booking creation, inbound sorting, and delivery pickup dispatch workflows.
-- 📊 **Real-time Performance Dashboards**: Dynamic operational insights, including revenue statistics, load balances, and transaction tracking.
-- 📱 **Fully Responsive Mobile Interface**: Operates seamlessly across desktop screens and warehouse mobile devices.
+- 🏢 **Multi-Tenant / Multi-Branch Isolation**: Clean data visibility boundaries configured for Super Admins and Branch Operators.
+- 🔐 **Role-Based Access Control (RBAC)**: Secure access paths and settings isolation for administrator and counter operators.
+- 📦 **End-to-End Parcel Management**: Intuitive booking creation, inbound sorting, and delivery pickup workflows.
+- 📊 **Real-time Performance Dashboards**: Dynamic operational insights, including revenue statistics, load balances, and transaction logs.
+- 📱 **Fully Responsive Interface**: Runs smoothly across desktop screens and warehouse mobile devices.
 - 🖨️ **Digital PDF "Builty" Generation**: Instantly produces Lorry Receipts and daily reports on-demand.
 - 💬 **WhatsApp Notification Hooks**: Automates shipping alerts directly to customer phones upon booking and arrival.
 
@@ -90,7 +81,7 @@ npm install
 ```
 
 ### 2. Configure Environment Variables
-Create a `.env` or `.env.local` file to connect to your local or cloud database:
+Create local environment files to connect to your local or cloud database:
 
 **For Frontend (`frontend/.env`)**:
 ```env
@@ -124,9 +115,3 @@ Start both the Next.js frontend and Express backend concurrently:
 npm run dev
 ```
 The frontend will start on [http://localhost:3000](http://localhost:3000) and backend on [http://localhost:3001](http://localhost:3001).
-
----
-
-## 📄 License & Submissions
-
-Submitting under the team **HackDevengers**. LogiOpen is open-source and free for non-profit and commercial use.

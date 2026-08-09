@@ -9,7 +9,7 @@ async function testDelivery() {
         console.log('Logging in as hirabagh...');
         const loginRes = await axios.post(`${API_URL}/auth/login`, {
             username: 'hirabagh',
-            password: 'savan8980'
+            password: 'admin8980'
         });
         const token = loginRes.data.token;
         const branchId = loginRes.data.user.branchId;

@@ -78,7 +78,7 @@ app.use(mongoSanitize());
 app.use(cors({
     origin: (origin, callback) => {
         // Enforce STRICT origin whitelisting based on ENV or strict fallbacks
-        const allowedOriginsstr = process.env.ALLOWED_ORIGINS || 'http://localhost:3000,http://127.0.0.1:3000,https://savanparcel.vercel.app';
+        const allowedOriginsstr = process.env.ALLOWED_ORIGINS || 'http://localhost:3000,http://127.0.0.1:3000,https://logiopenparcel.vercel.app';
         const allowedOrigins = allowedOriginsstr.split(',').map(o => o.trim().replace(/\/$/, ''));
 
         // Allow mobile apps (no origin) or server-to-server calls
@@ -87,7 +87,7 @@ app.use(cors({
         const normalizedOrigin = origin.replace(/\/$/, '');
 
         // Match exact whitelisted origins or safe preview branches
-        if (allowedOrigins.includes(normalizedOrigin) || normalizedOrigin.includes('parcel-management-system') || normalizedOrigin.includes('savanparcel')) {
+        if (allowedOrigins.includes(normalizedOrigin) || normalizedOrigin.includes('parcel-management-system') || normalizedOrigin.includes('logiopenparcel')) {
             return callback(null, true);
         }
 
