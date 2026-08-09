@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import { PermissionEditor } from "@/super-admin/components/PermissionEditor";
 import { BranchManager } from "@/super-admin/components/BranchManager";
-import { AdminOverview } from "@/super-admin/components/AdminOverview";
+import dynamic from "next/dynamic";
+const AdminOverview = dynamic(() => import("@/super-admin/components/AdminOverview").then(mod => mod.AdminOverview), { ssr: false });
 import { AdminList } from "@/super-admin/components/AdminList";
 import { AuditLogViewer } from "@/super-admin/components/AuditLogViewer";
 import { SettingsManager } from "@/super-admin/components/SettingsManager";
